@@ -6,10 +6,12 @@ tags: [State Management, Performance]
 
 ## Redux
 
-1. 狀態機/狀態管理工具, 以 flux 架構設計
+1. 狀態機/狀態管理工具
 2. 和框架無關, react, vue, 任何框架都可以拿來解決狀態問題
 3. 全域 **"單一實例(Single Instance)"**, 設計來管理 **"整個 app"** 都用到的狀態
 4. 透過 **Context 從頂層傳遞 store 給元件**
+
+<!--truncate-->
 
 ### Store
 
