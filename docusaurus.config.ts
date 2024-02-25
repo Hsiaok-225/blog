@@ -36,6 +36,8 @@ const config: Config = {
         blog: {
           showReadingTime: true,
           routeBasePath: "/",
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 120 } }),
         },
         theme: {
           customCss: "./src/css/custom.css",
