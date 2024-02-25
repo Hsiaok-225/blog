@@ -1,11 +1,9 @@
 ---
-slug: Lighthouse Metrics
-title: Lighthouse Metrics
+slug: Does page speed really matter
+title: Does page speed really matter
 tags: [Lighthouse, Performance]
 # authors: [bofenghsiao]
 ---
-
-## Does page speed really matter?
 
 Enhancing web page speed is crucial for improving user experience, conversion rates, and SEO rankings. This article explores practical strategies for optimizing Lighthouse Metrics & Optimization in web development.
 
@@ -24,10 +22,6 @@ The article will discuss how to improve various Lighthouse metrics:
 
 ![first-content-on-scren](./images/first-content-on-screen.png)
 
-### Server Side Render
-
-To speed up the FCP, we utilize Next.js **Server Side Render for pre-rendering HTML** instead of a SPA like React since the page content must be rendered after JavaScript execution
-
 ### Allow the browser to start rendering as soon as possible
 
 First we need to know when does the browser begin rendering, the answer is after the browser begins parsing HTML, **it starts rendering only after the critical CSS resources have been loaded**.
@@ -38,7 +32,7 @@ So, here are our strategies:
 - Preload CSS file
 - Font display swap
 - Avoid chaining critical requests
-- Avoid large DOM sizes
+- Server side render
 
 ### Remove unused CSS
 
@@ -111,6 +105,10 @@ master.scss
 
 // styles...
 ```
+
+### Server Side Render
+
+To speed up the FCP, we utilize Next.js **Server Side Render for pre-rendering HTML** instead of a SPA like React since the page content must be rendered after JavaScript execution
 
 ### Non blocking JS
 
@@ -311,12 +309,6 @@ document.querySelectorAll("*").length;
 | \_app bundle size(kb)    | -          | 639        | 238        | 174        | 157        |
 | Unused CSS(kb)           |            | 75         | 25         | 25         | 25         |
 | Score                    | x          | 31         | 56         | 63         | 59         |
-
-2023-08-22
-![initial-2023-08-22](./images/initial-2023-08-22.png)
-
-2023-12-12
-![2023-12-12-lighthouse](./images/2023-12-12-lighthouse.png)
 
 ## Ref
 

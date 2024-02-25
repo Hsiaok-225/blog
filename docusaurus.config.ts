@@ -3,7 +3,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "My Site",
+  title: "BoFeng's Blog",
   tagline: "Dinosaurs are cool",
   favicon: "img/favicon.ico",
 
@@ -32,7 +32,9 @@ const config: Config = {
     [
       "classic",
       {
-        docs: false,
+        docs: {
+          // sidebarPath: "./sidebars.ts",
+        },
         blog: {
           showReadingTime: true,
           routeBasePath: "/",
@@ -47,21 +49,31 @@ const config: Config = {
   ],
   plugins: [
     [
-      "@docusaurus/plugin-content-docs",
+      "@docusaurus/plugin-content-blog",
       {
-        id: "default",
+        id: "about-me",
+        routeBasePath: "about-me",
+        path: "./about-me",
       },
     ],
   ],
+  // plugins: [
+  //   [
+  //     "@docusaurus/plugin-content-docs",
+  //     {
+  //       id: "default",
+  //     },
+  //   ],
+  // ],
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "My Site",
-      logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
-      },
+      title: "BoFeng's Blog",
+      // logo: {
+      //   alt: "My Site Logo",
+      //   src: "img/logo.svg",
+      // },
       items: [
         // {
         //   type: "docSidebar",
@@ -69,12 +81,12 @@ const config: Config = {
         //   position: "left",
         //   label: "Tutorial",
         // },
-        // { to: "/blog", label: "Blog", position: "left" },
-        {
-          href: "https://github.com/Hsiaok-225",
-          label: "GitHub",
-          position: "right",
-        },
+        { to: "/about-me", label: "About Me", position: "left" },
+        // {
+        //   href: "https://github.com/Hsiaok-225",
+        //   label: "GitHub",
+        //   position: "right",
+        // },
       ],
     },
     // footer: {
